@@ -17,3 +17,6 @@ fieldset > h3 { font-weight: 500; font-size: 1.2em; background-color: #FFF; marg
 @media screen and (max-width : 600px) {
   .col50 { float: none; width: auto; }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

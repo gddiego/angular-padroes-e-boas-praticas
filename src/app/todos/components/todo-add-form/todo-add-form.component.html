@@ -1,4 +1,8 @@
-<div class="todo-add">
-  <input [formControl]="todoAddForm" type="text" placeholder="New Todo...">
-  <button [disabled]="todoAddForm.invalid" (click)="addTodo.emit(todoAddForm.value)">ADD</button>
-</div>
+<main class="cards">
+  <section class="card add">
+    <input [formControl]="todoAddForm" type="text" placeholder="Novo registro">
+    <button mat-stroked-button color="accent" class="button-primary flex-button" style="background-color: #52AF32;"
+      [disabled]="todoAddForm.invalid" (click)="addTodo.emit(todoAddForm.value)">Adicionar</button>
+
+  </section>
+</main>

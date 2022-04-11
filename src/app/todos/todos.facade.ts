@@ -38,7 +38,7 @@ export class TodosFacade {
       debounceTime(300),
       switchMap(search => this.api.list(search))
     )
-    .subscribe(todos => this.state.todos = todos);
+      .subscribe(todos => this.state.todos = todos);
   }
 
   addTodo(title: string): void {
@@ -51,7 +51,7 @@ export class TodosFacade {
         .subscribe(
           todo => {
             this.state.updateId(todo, tempTodo.id);
-            this.notification.success(title + ' Inserted!');
+            this.notification.success(title + ' inserido!');
           },
           error => this.state.removeTodo(tempTodo.id)
         );
@@ -63,7 +63,7 @@ export class TodosFacade {
     this.state.removeTodo(id);
 
     this.api.remove(id).subscribe(
-      () => this.notification.success('Todo removed!'),
+      () => this.notification.success('Registro removido!'),
       (error) => this.state.addTodo(todo)
     );
   }
@@ -74,7 +74,7 @@ export class TodosFacade {
 
     this.api.toggleCompleted(id, isCompleted)
       .subscribe(
-        () => this.notification.success(`Todo ${isCompleted ? 'checked' : 'unchecked'}!`),
+        () => this.notification.success(`Tarefa foi ${isCompleted ? 'completada' : 'Desmarcada de completada'}!`),
         (error) => this.state.toggleCompleted(id, !isCompleted)
       );
   }
